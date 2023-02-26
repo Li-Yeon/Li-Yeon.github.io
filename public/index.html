@@ -11,21 +11,16 @@
 <body>
     <div class="">
 
-        <!-- <div>
-            <img src="banner-2.png" alt="banner-image" class="">
-            <p
-                class="text-3xl font-bold font-Raleway text-white absolute left-[50%] translate-x-[-50%] translate-y-0 top-[160px] whitespace-nowrap">
-            </p>
-        </div> -->
+        <div class="flex flex-col" id="header">
 
-        <div class="flex flex-col">
-            <img src="frame-2.png" alt="frame-image" class="absolute w-full ">
+            <img src="frame.png" alt="flower-frame" class="absolute w-full h-[400px] z-[-5] md:hidden">
 
-            <img src="bg-flower.png" alt="frame-image" class="absolute z-[-5] top-[50px] w-[350px] h-[350px] left-[50%] translate-x-[-50%] translate-y-0 opacity-80">
+            <img src="bg-flower.png" alt="frame-image"
+                class="absolute z-[-5] top-[50px] w-[350px] h-[350px] left-[50%] translate-x-[-50%] translate-y-0 opacity-80">
 
 
             <div class="flex justify-center mt-20">
-                <img src="ring-2.png" alt="frame-image" class="w-[100px] h-[100px]">
+                <img src="ring.png" alt="frame-image" class="w-[100px] h-[100px]">
             </div>
 
             <p class="text-4xl font-Shantell text-black whitespace-nowrap flex justify-center">Leon & Aya</p>
@@ -37,19 +32,60 @@
                 <div class="flex gap-5">
                     <a href="https://forms.gle/tp3C155xWREPs5wcA"
                         class="bg-slate-700 py-2 px-6 text-lg font-Quicksand text-white mt-6">RSVP</a>
-
-                    <a href="#Itinerary"
-                        class="bg-green-200 py-2 px-4 text-lg font-Quicksand text-black mt-6">Itinerary</a>
                 </div>
             </div>
 
         </div>
 
-        <div class="mt-10">
-            <img src="banner-2.png" alt="banner-image" class="">
-            <p
-                class="text-3xl font-bold font-Raleway text-white absolute left-[50%] translate-x-[-50%] translate-y-0 top-[160px] whitespace-nowrap">
-            </p>
+        <!-- <div class="mt-20 bg-black min-h-[80px] max-w-[2px] mx-auto"></div> -->
+
+        <div class="mt-20 flex justify-center gap-1" id="navbar">
+
+            <a href="https://forms.gle/tp3C155xWREPs5wcA"
+                class="py-2 px-4 text-lg font-Quicksand text-black bg-green-200">Gallery</a>
+
+            <a href="https://forms.gle/tp3C155xWREPs5wcA"
+                class="py-2 px-4 text-lg font-Quicksand text-black bg-green-200">Itinerary</a>
+
+            <a href="https://forms.gle/tp3C155xWREPs5wcA"
+                class="py-2 px-4 text-lg font-Quicksand text-black bg-green-200">Location</a>
+
+        </div>
+
+        <div class="flex justify-center items-center mt-8 flex-col w-full" id="countdown">
+
+            <p class="font-Raleway text-3xl">Wedding Countdown</p>
+
+            <div class="flex gap-2">
+                <!-- Days -->
+                <div class="bg-slate-700 mt-3 flex flex-col items-center w-[80px] py-2">
+                    <p id="days" class="font-Quicksand text-3xl text-white"></p>
+                    <p class="text-white font-Quicksand text-xl mt-1">Days</p>
+                </div>
+
+                <!-- Hours -->
+                <div class="bg-slate-700 mt-3 flex flex-col items-center w-[80px] py-2">
+                    <p id="hours" class="font-Quicksand text-3xl text-white"></p>
+                    <p class="text-white font-Quicksand text-xl mt-1">Hours</p>
+                </div>
+
+                <!-- Minutes -->
+                <div class="bg-slate-700 mt-3 flex flex-col items-center w-[80px] py-2">
+                    <p id="minutes" class="font-Quicksand text-3xl text-white"></p>
+                    <p class="text-white font-Quicksand text-xl mt-1">Mins</p>
+                </div>
+
+                <!-- Seconds -->
+                <div class="bg-slate-700 mt-3 flex flex-col items-center w-[80px] py-2">
+                    <p id="seconds" class="font-Quicksand text-3xl text-white"></p>
+                    <p class="text-white font-Quicksand text-xl mt-1">Sec</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+
         </div>
 
         <!-- <div class="mx-4" id="Itinerary">
@@ -61,5 +97,45 @@
 
     </div>
 </body>
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("March 24, 2023 08:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("days").innerHTML = days
+        document.getElementById("hours").innerHTML = hours
+        document.getElementById("minutes").innerHTML = minutes
+        document.getElementById("seconds").innerHTML = seconds
+
+        // // Display the result in the element with id="demo"
+        // document.getElementById("timer").innerHTML = days + "Days " + hours + "Hours "
+        //     + minutes + "Minutes " + seconds + "Seconds";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("days").innerHTML = 0
+            document.getElementById("hours").innerHTML = 0
+            document.getElementById("minutes").innerHTML = 0
+            document.getElementById("seconds").innerHTML = 0
+        }
+    }, 1000);
+</script>
 
 </html>
