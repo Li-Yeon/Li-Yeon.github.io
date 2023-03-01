@@ -12,7 +12,7 @@
 </head>
 
 <script src="countdown.js"></script>
-
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 <body>
     <div class="">
@@ -46,8 +46,6 @@
         <div class="mt-20 flex justify-center gap-1" id="navbar">
 
             <a href="#gallery" class="py-2 px-4 text-lg font-Quicksand text-black bg-green-200">Gallery</a>
-
-            <a href="#itinerary" class="py-2 px-4 text-lg font-Quicksand text-black bg-green-200">Itinerary</a>
 
             <a href="#location" class="py-2 px-4 text-lg font-Quicksand text-black bg-green-200">Location</a>
 
@@ -87,68 +85,39 @@
 
         <!-- <div class="mt-10 bg-black min-h-[100px] max-w-[1px] mx-auto"></div> -->
 
-        <div class="md:mx-24 mt-24" id="gallery">
-            <p class="flex justify-center font-Raleway text-3xl mb-5">Gallery</p>
+        <div class="mt-10 md:mx-24 mx-10 relative" id="location">
 
-            <div id="default-carousel" class="relative" data-carousel="static">
-                <!-- Carousel wrapper -->
-                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                     <!-- Item 1 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                        <img src="slide1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="slide2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="slide3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                </div>
-                <!-- Slider indicators -->
-                <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                </div>
-                <!-- Slider controls -->
-                <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                        <span class="sr-only">Previous</span>
-                    </span>
-                </button>
-                <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        <span class="sr-only">Next</span>
-                    </span>
-                </button>
-            </div>
-        </div>
+            <p class="flex justify-center text-3xl mb-5">Location</p>
 
-        <div class="mt-10 md:mx-24 mx-10" id="itinerary">
-            <p class="flex justify-center font-Raleway text-3xl mb-5">Itinerary</p>
+            <div id="map" class="h-[400px] w-full mx-auto"></div>
 
-            <ol class="relative border-l border-gray-200 dark:border-gray-700">                  
-                <li class="mb-5 ml-4">
-                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">02.00PM</time>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Gather at Church</h3>
-                </li>
-
-                <li class="mb-5 ml-4">
-                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">03.00PM</time>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Go to Reception</h3>
-                </li>
-            </ol>
         </div>
 
     </div>
 </body>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJFLeF-wzVMfDiK9ltcpSr1IORhQY45sA&callback=initMap&v=weekly"
+    defer>
+</script>
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        const uluru = { lat: 14.434385785672415, lng: 121.0418045019933 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 20,
+            center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+        });
+    }
+
+    window.initMap = initMap;
+</script>
 
 
 </html>
